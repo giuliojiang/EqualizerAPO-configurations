@@ -1,15 +1,15 @@
 Channel: all
-Copy: L=L LRS=0.122*L+0.122*R R=R C=C CS=0.122*C RL=RL RS=0.122*RL+0.122*RR RR=RR SUB=SUB
+Copy: L=L LRS=0.122*L+0.122*R R=R C=C CS=0.122*C RL=RL RS=0.122*RL+0.122*RR RR=RR SUB=0.385*SUB
 Channel: L
-Filter: ON HP Fc 60Hz
+Filter: ON HP Fc 80Hz
 Channel: LRS
-Filter: ON LP Fc 60Hz
+Filter: ON LP Fc 80Hz
 Channel: R
-Filter: ON HP Fc 60Hz
+Filter: ON HP Fc 80Hz
 Channel: C
-Filter: ON HP Fc 100Hz
+Filter: ON HP Fc 180Hz
 Channel: CS
-Filter: ON LP Fc 100Hz
+Filter: ON LP Fc 180Hz
 Channel: RL
 Filter: ON HP Fc 80Hz
 Channel: RS
@@ -19,11 +19,22 @@ Filter: ON HP Fc 80Hz
 Channel: all
 Copy: L=L R=R C=C RL=RL RR=RR SUB=LRS+CS+RS+SUB
 Channel: L R
-# Add L R equalizer
+Filter  1: ON  PK       Fc     314 Hz  Gain  -6.4 dB  Q  5.00
+Filter  2: ON  PK       Fc     447 Hz  Gain  -5.1 dB  Q  5.00
+Filter  3: ON  PK       Fc     862 Hz  Gain  -3.4 dB  Q  5.00
+Filter  4: ON  PK       Fc     130 Hz  Gain -11.1 dB  Q 20.38
+Filter  5: ON  PK       Fc     138 Hz  Gain   2.2 dB  Q 22.26
 Channel: C
-# Add C equalizer
 Channel: RL RR
-# Add Rear equalizer
+Filter  1: ON  PK       Fc     320 Hz  Gain  -6.5 dB  Q  5.00
+Filter  2: ON  PK       Fc     406 Hz  Gain  -5.7 dB  Q  5.00
+Filter  3: ON  PK       Fc     297 Hz  Gain   3.3 dB  Q  5.00
+Filter  4: ON  PK       Fc     379 Hz  Gain   2.7 dB  Q  5.00
+Filter  5: ON  PK       Fc     897 Hz  Gain   2.0 dB  Q  5.00
+Filter  6: ON  PK       Fc     878 Hz  Gain  -2.0 dB  Q  5.00
+Filter  7: ON  PK       Fc     157 Hz  Gain  -6.7 dB  Q 28.58
 Channel: SUB
-Filter: ON HP Fc 30Hz
-# Add SUB equalizer
+Filter  1: ON  PK       Fc    82.0 Hz  Gain  -8.0 dB  Q  8.49
+Filter  2: ON  PK       Fc     180 Hz  Gain  -7.0 dB  Q 21.21
+Filter  3: ON  PK       Fc    42.0 Hz  Gain  -4.0 dB  Q 14.14
+Filter: ON HP Fc 30 Hz
