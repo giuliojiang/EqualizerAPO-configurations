@@ -1,0 +1,29 @@
+Channel: all
+Copy: L=L LRS=0.122*L+0.122*R R=R C=C CS=0.122*C RL=RL RS=0.122*RL+0.122*RR RR=RR SUB=SUB
+Channel: L
+Filter: ON HP Fc 60Hz
+Channel: LRS
+Filter: ON LP Fc 60Hz
+Channel: R
+Filter: ON HP Fc 60Hz
+Channel: C
+Filter: ON HP Fc 100Hz
+Channel: CS
+Filter: ON LP Fc 100Hz
+Channel: RL
+Filter: ON HP Fc 80Hz
+Channel: RS
+Filter: ON LP Fc 80Hz
+Channel: RR
+Filter: ON HP Fc 80Hz
+Channel: all
+Copy: L=L R=R C=C RL=RL RR=RR SUB=LRS+CS+RS+SUB
+Channel: L R
+# Add L R equalizer
+Channel: C
+# Add C equalizer
+Channel: RL RR
+# Add Rear equalizer
+Channel: SUB
+Filter: ON HP Fc 30Hz
+# Add SUB equalizer
