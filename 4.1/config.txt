@@ -1,0 +1,15 @@
+Channel: all
+Copy: L=0.66*L+0.33*C R=0.66*R+0.33*C
+Copy: LS=L RS=R
+Channel: L
+Filter: ON HP Fc 80Hz
+Channel: LS
+Filter: ON LP Fc 80Hz
+Channel: R
+Filter: ON HP Fc 80Hz
+Channel: RS
+Filter: ON LP Fc 80Hz
+Channel: all
+Copy: SUB=0.6*SUB+0.2*LS+0.2*RS
+Channel: SUB
+Filter: ON HP Fc 25Hz
