@@ -1,0 +1,26 @@
+Channel: L
+Filter  1: ON  PK       Fc    41.2 Hz  Gain -12.4 dB  Q 9.485
+Filter  2: ON  PK       Fc     130 Hz  Gain -12.0 dB  Q 11.134
+Filter  3: ON  PK       Fc    60.9 Hz  Gain  -6.3 dB  Q 8.090
+Filter  4: ON  PK       Fc    69.4 Hz  Gain   1.6 dB  Q 11.162
+Channel: R
+Filter  1: ON  PK       Fc    41.5 Hz  Gain -13.8 dB  Q 6.748
+Filter  2: ON  PK       Fc    59.9 Hz  Gain  -4.7 dB  Q 8.010
+Filter  3: ON  PK       Fc     130 Hz  Gain  -8.0 dB  Q 16.477
+Filter  4: ON  PK       Fc    45.8 Hz  Gain   3.5 dB  Q 7.358
+Filter  5: ON  PK       Fc    69.2 Hz  Gain   1.5 dB  Q 11.129
+Channel: all
+Copy: L=0.66*L+0.33*C R=0.66*R+0.33*C
+Copy: LS=L RS=R
+Channel: L
+Filter: ON HP Fc 80Hz
+Channel: LS
+Filter: ON LP Fc 80Hz
+Channel: R
+Filter: ON HP Fc 80Hz
+Channel: RS
+Filter: ON LP Fc 80Hz
+Channel: all
+Copy: SUB=0.6*SUB+0.2*LS+0.2*RS
+Channel: SUB
+Filter: ON HP Fc 25Hz
